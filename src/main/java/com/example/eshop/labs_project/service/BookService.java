@@ -35,4 +35,6 @@ public interface BookService {
     Author saveAuthor(String name, String surname, String country, String continent);
 
     List<Category> getAllCategories();
+
+    List<Author> getAllAuthors();
 }

@@ -159,4 +159,9 @@ public class BookServiceImpl implements BookService {
     public List<Category> getAllCategories() {
         return Arrays.asList(Category.values());
     }
+
+    @Override
+    public List<Author> getAllAuthors() {
+        return this.authorRepository.findAll();
+    }
 }

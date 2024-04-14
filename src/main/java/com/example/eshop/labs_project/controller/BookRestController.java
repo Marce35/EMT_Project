@@ -36,6 +36,12 @@ public class BookRestController {
         List<Category> categories = bookService.getAllCategories();
         return ResponseEntity.ok(categories);
     }
+
+    @GetMapping("/authors")
+    public ResponseEntity<List<Author>> getAllAuthors(){
+        List<Author> authors = bookService.getAllAuthors();
+        return ResponseEntity.ok(authors);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Book> findBookById(@PathVariable Long id) {
 
@@ -73,7 +79,7 @@ public class BookRestController {
                 .orElseGet(() -> ResponseEntity.badRequest().build());
     }
 
-    @PostMapping("/edit/{id}")
+    @PutMapping("/edit/{id}")
     public ResponseEntity<Book> edit(@PathVariable Long id, @RequestBody BookDTO bookDTO){
         return this.bookService.edit(id, bookDTO)
                 .map(book -> ResponseEntity.ok().body(book))
