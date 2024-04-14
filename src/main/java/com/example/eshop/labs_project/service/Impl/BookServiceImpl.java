@@ -14,6 +14,7 @@ import com.example.eshop.labs_project.service.BookService;
 import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -138,6 +139,8 @@ public class BookServiceImpl implements BookService {
         return author;
     }
 
+
+
     @Override
     public Author editAuthor(Long id, String name, String surname, String country, String continent) {
         Author author = authorRepository.findById(id).orElseThrow(() -> new AuthorNotFoundException(id));
@@ -152,5 +155,8 @@ public class BookServiceImpl implements BookService {
         return author;
     }
 
-
+    @Override
+    public List<Category> getAllCategories() {
+        return Arrays.asList(Category.values());
+    }
 }

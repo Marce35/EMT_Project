@@ -33,4 +33,6 @@ public interface BookService {
     Author editAuthor(Long id, String name, String surname, String country, String continent);
 
     Author saveAuthor(String name, String surname, String country, String continent);
+
+    List<Category> getAllCategories();
 }

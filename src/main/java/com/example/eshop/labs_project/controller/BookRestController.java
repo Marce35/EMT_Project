@@ -30,6 +30,12 @@ public class BookRestController {
         List<Book> books = bookService.findAll();
         return ResponseEntity.ok(books);
     }
+
+    @GetMapping("/categories")
+    public ResponseEntity<List<Category>> getAllCategories(){
+        List<Category> categories = bookService.getAllCategories();
+        return ResponseEntity.ok(categories);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Book> findBookById(@PathVariable Long id) {
 
