@@ -2,6 +2,7 @@ package com.example.eshop.labs_project.service;
 
 import com.example.eshop.labs_project.model.Author;
 import com.example.eshop.labs_project.model.Book;
+import com.example.eshop.labs_project.model.dto.BookDTO;
 import com.example.eshop.labs_project.model.enumerations.Category;
 import org.apache.coyote.BadRequestException;
 
@@ -16,6 +17,10 @@ public interface BookService {
     Optional<Book> findByName(String name);
 
     Book save(String name, Category category, Long author, Integer availableCopies);
+
+    Optional<Book> save(BookDTO bookDTO);
+
+    Optional<Book> edit(Long id, BookDTO bookDTO);
 
     Book edit(Long id, String name, Category category, Long author, Integer availableCopies);
 

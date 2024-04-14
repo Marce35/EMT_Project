@@ -17,6 +17,9 @@ public class Book {
     private Author author;
     private Integer availableCopies;
 
+    @Version
+    private Long version;
+
     public Book(String name, Category category, Author author, Integer availableCopies) {
         this.name = name;
         this.category = category;
